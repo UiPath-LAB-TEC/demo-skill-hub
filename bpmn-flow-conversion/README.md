@@ -96,6 +96,8 @@ Use the uipath-bpmn-to-flow-conversion skill.
 Inspect the BPMN project in this repo and create a concise conversion plan for a close 1:1 Maestro Flow version. Identify required clarification questions before making changes.
 ```
 
+If the BPMN includes AI agents, human tasks, Action Center steps, or action apps, the skill should ask how to represent those before creating the conversion plan.
+
 If you already know the target folder or deployment expectation, include it:
 
 ```text
@@ -108,5 +110,5 @@ Upload to Studio Web after local validation: yes/no
 - Keep the conversion demo-grade and simple.
 - Reuse existing resources when possible.
 - Ask before mocking or replacing missing resources.
-- Convert simple human tasks to Flow-native quick forms unless a coded action app is required.
-- Keep AI agents as external resource calls unless the demo explicitly needs inline Flow agents.
+- Ask the user how to represent AI agents before planning or building: external resource calls or inline Flow agents.
+- Ask the user how to represent each human task/action app before planning or building: quick form, coded action app, or placeholder/manual handoff.
