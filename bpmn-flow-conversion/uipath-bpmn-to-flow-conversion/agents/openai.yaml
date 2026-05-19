@@ -1,0 +1,7 @@
+interface:
+  display_name: "UiPath BPMN To Flow"
+  short_description: "Convert UiPath BPMN demos into Maestro Flows"
+  default_prompt: "Use $uipath-bpmn-to-flow-conversion to convert this UiPath BPMN demo into a close 1:1 Maestro Flow."
+
+policy:
+  allow_implicit_invocation: true
