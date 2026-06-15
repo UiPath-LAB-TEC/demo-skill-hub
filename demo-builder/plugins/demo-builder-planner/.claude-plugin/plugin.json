@@ -1,6 +1,6 @@
 {
   "name": "demo-builder-planner",
-  "description": "Plan demo-grade UiPath Maestro Flow builds — ideation, SPEC.md, spec-tightening prompt, and /goal prompt",
+  "description": "Create demo-grade SPEC.md files for UiPath demos across any UiPath artifact surface",
   "version": "1.0.0",
   "author": {
     "name": "James Dickson"

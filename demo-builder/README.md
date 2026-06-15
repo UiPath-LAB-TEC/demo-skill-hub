@@ -1,8 +1,8 @@
-# UiPath Demo Builder Planner
+# UiPath Demo SPEC Builder
 
-`demo-builder-planner` is a Claude Code plugin for planning demo-grade UiPath Maestro Flow builds. It turns a customer name, use case, or short brief into a precise `SPEC.md`, a short spec-tightening prompt, and a structured `/goal` prompt for long-running demo builds.
+`demo-builder-planner` is a Claude Code plugin and Codex skill for creating demo-grade `SPEC.md` files for UiPath demos. It turns a customer name, use case, or short brief into a build contract that another AI can use with the relevant UiPath specialist skills.
 
-The skill plans the demo. It does not build or upload UiPath artifacts by itself. The resulting artifacts are meant to be handed to a coding agent with the core UiPath skills installed.
+The skill plans the demo only. It does not build, validate, upload, or deploy UiPath artifacts.
 
 ## Install
 
@@ -89,18 +89,24 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 
 ## Companion Skills
 
-Install the core UiPath skills too. The planner depends on them for product-specific build guidance:
+Install the relevant UiPath skills too. The SPEC should name which ones the builder must open, such as:
 
 - `uipath-maestro-flow`
+- `uipath-maestro-bpmn`
+- `uipath-rpa`
 - `uipath-agents`
+- `uipath-coded-apps`
+- `uipath-api-workflow`
+- `uipath-maestro-case`
 - `uipath-platform`
+- `uipath-solution`
 
 ## How To Use
 
 Start a conversation and describe the demo you want:
 
 ```text
-Plan a UiPath Maestro Flow demo for commercial insurance claims triage.
+Create a UiPath demo SPEC.md for commercial insurance claims triage.
 ```
 
 Minimum input:
@@ -115,34 +121,14 @@ Better input:
 - Known systems or connectors
 - Must-show UiPath capabilities
 - Happy path and one exception path
-- Preferred agent mode, if known
-- Studio Web upload expectation, if known
+- Preferred UiPath artifact surfaces, if known
+- Deployment or tenant/folder expectation, if known
 
 The planner writes:
 
 - `SPEC.md`
-- `TIGHTEN-SPEC-PROMPT.md`
-- `CODEX-GOAL-PROMPT.md`
-- Optional supporting files under `demo-build-plan/` for larger demos
 
-## Workflow
-
-![Demo Builder Planner workflow](docs/planner-workflow.svg)
-
-After the interview, the planner creates a first draft `SPEC.md`. Then ask the agent to tighten the spec:
-
-```text
-@SPEC.md
-@TIGHTEN-SPEC-PROMPT.md
-```
-
-When the spec is ready, start the implementation handoff:
-
-```text
-/goal
-@SPEC.md
-@CODEX-GOAL-PROMPT.md
-```
+It does not write `/goal` prompts or implementation handoff prompts.
 
 ## Repository Layout
 
@@ -151,6 +137,4 @@ When the spec is ready, start the implementation handoff:
 plugins/demo-builder-planner/.claude-plugin/plugin.json                  # Plugin manifest
 plugins/demo-builder-planner/skills/demo-builder-planner/SKILL.md        # Skill definition
 plugins/demo-builder-planner/skills/demo-builder-planner/references/
-docs/planner-workflow.excalidraw
-docs/planner-workflow.svg
 ```

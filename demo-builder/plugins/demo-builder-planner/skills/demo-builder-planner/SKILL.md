@@ -1,22 +1,22 @@
 ---
 name: demo-builder-planner
-description: "Plan demo-grade UiPath Maestro Flow builds through ideation, a precise SPEC.md, a short SPEC-tightening prompt, and a structured Codex /goal prompt. Use when the user asks to design, scope, or propose a UiPath demo; provides a customer/account name for demo ideas; provides a use-case brief; or mentions Maestro Flow, AI agents, connector activities, Flow tool nodes, mock system payloads, human review, Studio Web upload, or agentic orchestration. Produces planning artifacts only, not implementation."
+description: "Create demo-grade SPEC.md files for UiPath demos across any UiPath artifact surface. Use when the user asks to design, scope, propose, or specify a UiPath demo; provides a customer/account name; provides a use-case brief; or mentions UiPath demo artifacts such as Maestro Flow, BPMN, RPA, agents, coded apps, API workflows, case management, Data Fabric, human review, platform resources, or solution packaging. Produces a SPEC.md only, not implementation artifacts or handoff prompts."
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, AskUserQuestion, Agent
 ---
 
-# Demo Builder - Planner
+# UiPath Demo SPEC Builder
 
-Entry point for demo-grade UiPath Maestro Flow builds. The planner turns rough demo ideas into a precise `SPEC.md`, a short prompt to tighten that spec, and a structured `/goal` prompt for a long-running Codex build.
+Turn rough UiPath demo ideas into a precise `SPEC.md` that another AI can use to build the demo artifacts.
 
-Only plan the demo build specification. Do not create Flow, agent, coded action app, fixture, or solution artifacts.
+Only write the demo specification. Do not create Flow, BPMN, RPA, agent, app, case, API workflow, fixture, platform, solution, or deployment artifacts.
 
 ## Not For
 
 - Building demos.
 - Production automation design.
-- Non-local resource orchestration outside the local Flow scope.
+- Writing PDDs or full enterprise SDDs.
+- Creating implementation task lists, `/goal` prompts, or agent handoff prompts.
 - Running existing automations unless the user explicitly asks to debug or run them.
-- Visual verification as a hard completion gate. Visual flow quality should be specified, but do not require rendered-canvas inspection in `done_when`.
 
 ## Inputs
 
@@ -24,96 +24,93 @@ Ideal:
 
 - Use case title and one-paragraph business goal.
 - Industry/domain.
-- Known systems, connectors, tool needs, agents, documents, and tenant/folder constraints.
+- Known UiPath products, systems, connectors, documents, user roles, and tenant/folder constraints.
 - Happy path and one exception path.
+- Must-show demo moments or capabilities.
 
 Minimum:
 
-- Customer/account name. Research and propose 2-3 Flow demo options before continuing.
+- Customer/account name or vague use case. Research then propose 2-3 demo options before writing `SPEC.md`.
 
 ## Workflow
 
-1. Ideate: turn the brief into 2-3 demo options when the scope is not already clear.
-2. Interview: ask targeted questions before writing final artifacts unless the user explicitly says to skip.
-3. Specify: write `SPEC.md` as the authoritative build contract.
-4. Tighten: write `TIGHTEN-SPEC-PROMPT.md`, a short prompt for Codex to challenge and tighten `SPEC.md` before building.
-5. Execute: write `CODEX-GOAL-PROMPT.md`, a ready-to-paste `/goal` prompt with measurable `done_when` criteria.
+1. Ideate: turn a vague brief into 2-3 demo options.
+2. Route: read `references/uipath-demo-artifact-map.md` and map the demo requirements to the relevant UiPath artifact surfaces and specialist skills.
+3. Interview: IMPORTANT - ask targeted questions about any ambiguous requirement to get the details needed to make the spec buildable. Include a recommended answer for each question.
+4. Specify: write `SPEC.md` as the authoritative build contract.
+5. Check: run `references/spec-quality-checklist.md` before finalizing.
 
-Research the use case when it would improve the demo story, industry accuracy, or system choices. Think in terms of digital workflow orchestration: Maestro Flow nodes, AI agents for reasoning, mock script nodes for system payloads, connector/native Flow nodes, and human review where it improves the story.
+Research the use case with web searches to frame your understanding of the use case, industry, artifact selection, and system choices.
 
-Write from the perspective of the builder who will use the core UiPath skills. Do not assume unspecified Studio Web upload, tenant/folder targets, connector availability, or agent mode.
+Write from the perspective of the builder who will use the UiPath specialist skills. Do not assume unspecified tenant/folder targets, connector availability, real system access, deployment scope, or artifact type.
+
+Keep the spec simple and demo-grade. Prefer the smallest set of artifacts that clearly illustrates the concept. Add complexity only when it makes the demo stronger or the user explicitly asks for it.
 
 ## Interview
 
-Before writing final artifacts, ask targeted clarification questions even when the use case seems clear. Do not finalize `SPEC.md` until the user answers or explicitly authorizes proceeding with assumptions.
+Ask questions about absolutely any ambiguous aspect of the specification or demo requirements.  After you have informed yourself and have a mental model of what needs to be built - interview the user to get mutual agreement on all details necessary to create a tight SPEC.md to build the demo.
 
 The interview must confirm:
 
 - demo scope, audience, and industry context
 - input/output contract
 - happy path and one exception path
-- systems, mock systems, connector/native Flow nodes, and mock script payload needs
-- agent mode: inline Flow agents, coded agents, low-code agents, or mixed
-- human review behavior and task type: native Maestro Flow quick form or separately deployed coded action app
-- visual Flow presentation, including layout and sticky notes
+- selected UiPath artifact surfaces and specialist skills
+- systems of record, mock-vs-real integration choices, connectors, and test data
+- AI, document extraction, or agent responsibilities when applicable
+- human review, Action Center, coded app, or task behavior when applicable
+- UI and visual presentation requirements when applicable
+- platform resources, deployment, solution packaging, and tenant/folder expectations when applicable
 - validation expectations
-- Studio Web upload expectation when the user has not specified it up front
 
-For each question you ask - provide your best recommendation on the approach or answer to that question.
+For each question you ask, provide your best recommendation.
 
-If human review is in scope and the task type is not specified, ask the user to choose between:
+When human review is in scope and the task type is unclear, recommend the simplest option that fits:
 
-- Native Maestro Flow quick form review. Recommend this for simple approve/reject, missing-field capture, or lightweight data correction inside the Flow.
-- Coded action app review. Recommend this only when the review needs a richer UI, document preview, complex correction controls, or reusable Action Center experience.
+- Native Flow/HITL quick form for simple approve/reject, missing-field capture, or lightweight data correction (only applicable for Maestro Flow demos)
+- Coded action app when the review needs a richer UI, document preview, complex correction controls, or reusable Action Center experience.
+- Complete coded process app for a full user experience to manage the flow or case system. Coded Process Apps are most often used with Case Management demos.
 
-If coded action app review is selected, the spec must require it as a separate UiPath coded action app project that is built, published, and deployed to an Orchestrator folder before the Flow references it. Do not plan to add the coded action app as a project inside the same Studio Web solution as the Maestro Flow. Additionally, ensure you detail the preferred styling in the plan - ask the user about this. Default styling to light themes and clean, professional, delightful user experiences.
+## Artifact Routing
 
-## Demo Scope
+Use `references/uipath-demo-artifact-map.md` before finalizing product selection. The spec must name the specialist UiPath skill another AI should open for each artifact or resource.
 
-- Local-execution Maestro Flow nodes.
-- AI agents as the featured reasoning component.
-- Inline Flow agents, coded agents, low-code agents, or mixed agent mode, based on user choice.
-- Mock script nodes for system-of-record payloads by default. These script nodes should create deterministic request/response payloads that the user can later replace with connector calls, API Workflow artifacts, or other Studio Web resources if desired.
-- API Workflow artifacts only when the user explicitly requests real API Workflows or names existing API Workflows to call.
-- Connector activities, Flow tool nodes, Flow control nodes, and human review only where they support the demo story.
-- Native Maestro Flow quick form review by default for lightweight human review; coded action app review only when explicitly chosen during the interview or clearly required by the demo experience.
+Common choices:
+
+- Maestro Flow for visual orchestration, connector nodes, Flow tools, inline agents, and simple human checkpoints.
+- BPMN or Case Management for process/case stories with stages, milestones, long-running work, or operational governance.
+- RPA when the demo must operate desktop/web apps, documents, Excel, email, queues, or legacy systems.
+- Agents when reasoning, tool use, natural language interaction, or autonomous decisioning is the featured component.
+- Coded Apps or Coded Action Apps when the demo needs a user-facing web UI or rich review screen.
+- API Workflows when the demo needs a reusable API-first workflow or explicit HTTP/connector activity composition.
+- Data Fabric, queues, assets, buckets, Integration Service connections, Test Manager, or Solution packaging only when those resources support the demo story or validation.
+
+Mock external systems by default for demo clarity unless the user requests real connectors, APIs, tenant resources, or existing assets.
 
 ## Outputs
 
 - Write `SPEC.md`.
-- Write `TIGHTEN-SPEC-PROMPT.md`.
-- Write `CODEX-GOAL-PROMPT.md`.
-- Add supporting `demo-build-plan/` files only when the build is too large for `SPEC.md` to stay readable.
+- Do not write `TIGHTEN-SPEC-PROMPT.md`.
+- Do not write `CODEX-GOAL-PROMPT.md`.
+- Do not write `/goal` prompts or generic implementation prompts.
+- Add supporting files only when the user explicitly asks for them.
 
 Do not write `DEMO-BUILD-PLAN.md`.
 
 `SPEC.md` must include:
 
-- business goal, audience, demo story, happy path, and exception path
-- assumptions and explicit non-goals
-- solution shape and Flow node sequence
-- start input contract, output contract, and ready-to-paste sample input
-- selected agent mode and agent responsibilities
-- mock script payload, connector, native Flow node, and explicitly requested API Workflow contracts
-- human review task contract when applicable, including the selected task type
-- coded action app packaging, publish, deployment folder, and Flow reference contract when coded action app review is selected
-- visual Flow design requirements: clean layout, readable grouping, sticky note zones, varied note colors, and no overlapping nodes
-- fixtures and expected outputs
-- validation checks for Flow, agents, mock script payloads, fixtures, solution registration, coded action app deployment when applicable, and Studio Web upload when requested
+- title, one-line demo promise, business goal, audience, and domain context
+- demo story, must-show moments, happy path, and exception path
+- assumptions, explicit non-goals, and open questions or blockers
+- artifact inventory: artifact name/path, UiPath surface, owning specialist skill, purpose, inputs, outputs, and dependencies
+- selected UiPath skill routing and why each skill is needed
+- end-to-end process shape: stages, steps, handoffs, routing, and responsibility boundaries
+- input contract, output contract, and ready-to-paste sample inputs
+- data model, fixtures, expected outputs, and mock-vs-real integration contracts
+- AI, agent, document extraction, or HITL contracts when applicable
+- UI/visual presentation requirements when applicable
+- platform resources, deployment, packaging, tenant/folder, and connection assumptions when applicable
+- validation checklist with concrete commands or evidence another AI can use
+- build order at a high level, without turning the spec into a task runner prompt
 
-`TIGHTEN-SPEC-PROMPT.md` must be short. It should tell Codex to read `SPEC.md`, identify ambiguous or unverifiable requirements, recommend fixes, tighten the spec in place, avoid adding scope, and stop before building.
-
-`CODEX-GOAL-PROMPT.md` must use these blocks:
-
-- `<goal>`
-- `<context>`
-- `<constraints>`
-- `<done_when>`
-- `<workflow>`
-- `<verification_loop>`
-- `<execution_rules>`
-- `<output_contract>`
-
-`done_when` must be concrete and measurable. Include Studio Web upload only when the user requested it during the interview or up front. Do not make visual canvas inspection a hard completion criterion.
-
-Before finalizing, use `references/spec-quality-checklist.md` and `references/goal-prompt-template.md` as needed.
+Before finalizing, use `references/spec-quality-checklist.md`.
