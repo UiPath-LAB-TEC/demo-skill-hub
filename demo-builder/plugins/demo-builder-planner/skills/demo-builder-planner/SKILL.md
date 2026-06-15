@@ -36,7 +36,7 @@ Minimum:
 
 1. Ideate: turn a vague brief into 2-3 demo options.
 2. Route: read `references/uipath-demo-artifact-map.md` and map the demo requirements to the relevant UiPath artifact surfaces and specialist skills.
-3. Interview: IMPORTANT - ask targeted questions about any ambiguous requirement to get the details needed to make the spec buildable. Include a recommended answer for each question.
+3. Interview: IMPORTANT - ask the user targeted questions about any ambiguous requirement to get the details needed to make the spec buildable. Include a recommended answer for each question.
 4. Specify: write `SPEC.md` as the authoritative build contract.
 5. Check: run `references/spec-quality-checklist.md` before finalizing.
 
@@ -46,9 +46,9 @@ Write from the perspective of the builder who will use the UiPath specialist ski
 
 Keep the spec simple and demo-grade. Prefer the smallest set of artifacts that clearly illustrates the concept. Add complexity only when it makes the demo stronger or the user explicitly asks for it.
 
-## Interview
+## Interview (MUST DO)
 
-Ask questions about absolutely any ambiguous aspect of the specification or demo requirements.  After you have informed yourself and have a mental model of what needs to be built - interview the user to get mutual agreement on all details necessary to create a tight SPEC.md to build the demo.
+**IMPORTANT**: You must conduct an interview with the user to ensure your thinking, your research and any assumptions about the build are aligned with what the user wants. DO NOT proceed with SPEC.md without clarifying details with the user first. Ask questions about absolutely any ambiguous aspect of the specification or demo requirements.  After you have informed yourself and have a mental model of what needs to be built - interview the user to get mutual agreement on all details necessary to create a tight SPEC.md to build the demo.
 
 The interview must confirm:
 
@@ -63,7 +63,7 @@ The interview must confirm:
 - platform resources, deployment, solution packaging, and tenant/folder expectations when applicable
 - validation expectations
 
-For each question you ask, provide your best recommendation.
+For each question you ask, provide your best recommendation based on your research, the UiPath skills and the user's original request.
 
 When human review is in scope and the task type is unclear, recommend the simplest option that fits:
 
