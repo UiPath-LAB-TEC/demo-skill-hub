@@ -4,23 +4,31 @@
 
 The skill plans the demo only. It does not build, validate, upload, or deploy UiPath artifacts.
 
+Repository: https://github.com/jms-dcksn/demo-skill-hub/tree/main/demo-builder
+
 ## Install
 
-### Step 1 — Add the marketplace
+### Claude Code Plugin
 
-Run this inside Claude Code (or in a Claude Code terminal session):
+Add the marketplace from the published `demo-builder` package:
 
 ```
-/plugin marketplace add jms-dcksn/uipath-demo-builder
+/plugin marketplace add https://raw.githubusercontent.com/jms-dcksn/demo-skill-hub/main/demo-builder/.claude-plugin/marketplace.json
 ```
 
 Or from the CLI:
 
 ```bash
-claude plugin marketplace add jms-dcksn/uipath-demo-builder
+claude plugin marketplace add https://raw.githubusercontent.com/jms-dcksn/demo-skill-hub/main/demo-builder/.claude-plugin/marketplace.json
 ```
 
-### Step 2 — Install the plugin
+If you previously installed the old standalone marketplace, remove it first:
+
+```bash
+claude plugin marketplace remove uipath-demo-builder
+```
+
+Install the plugin:
 
 ```
 /plugin install demo-builder-planner@uipath-demo-builder
@@ -32,7 +40,7 @@ Or from the CLI:
 claude plugin install demo-builder-planner@uipath-demo-builder
 ```
 
-### Step 3 — Use the skill
+Use the skill:
 
 ```
 /demo-builder-planner:demo-builder-planner
@@ -58,8 +66,8 @@ Add to your project's `.claude/settings.json` to have teammates prompted to inst
   "extraKnownMarketplaces": {
     "uipath-demo-builder": {
       "source": {
-        "source": "github",
-        "repo": "jms-dcksn/uipath-demo-builder"
+        "source": "url",
+        "url": "https://raw.githubusercontent.com/jms-dcksn/demo-skill-hub/main/demo-builder/.claude-plugin/marketplace.json"
       }
     }
   },
@@ -76,7 +84,7 @@ Add to your project's `.claude/settings.json` to have teammates prompted to inst
 Open Codex and paste:
 
 ```text
-Install the Codex skill at https://github.com/jms-dcksn/uipath-demo-builder/tree/main/plugins/demo-builder-planner/skills/demo-builder-planner
+Install the Codex skill at https://github.com/jms-dcksn/demo-skill-hub/tree/main/demo-builder/plugins/demo-builder-planner/skills/demo-builder-planner
 ```
 
 Restart Codex after the install finishes.
@@ -84,7 +92,7 @@ Restart Codex after the install finishes.
 ### Option B: Install from terminal
 
 ```bash
-python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo jms-dcksn/uipath-demo-builder --path plugins/demo-builder-planner/skills/demo-builder-planner
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo jms-dcksn/demo-skill-hub --path demo-builder/plugins/demo-builder-planner/skills/demo-builder-planner
 ```
 
 ## Companion Skills
@@ -128,7 +136,7 @@ The planner writes:
 
 - `SPEC.md`
 
-It does not write `/goal` prompts or implementation handoff prompts.
+It does not write `/goal` prompts, implementation handoff prompts, or supporting files unless explicitly requested.
 
 ## Repository Layout
 

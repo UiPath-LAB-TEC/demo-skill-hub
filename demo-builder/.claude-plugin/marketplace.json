@@ -8,13 +8,18 @@
   "plugins": [
     {
       "name": "demo-builder-planner",
-      "source": "./plugins/demo-builder-planner",
+      "source": {
+        "source": "git-subdir",
+        "url": "jms-dcksn/demo-skill-hub",
+        "path": "demo-builder/plugins/demo-builder-planner",
+        "ref": "main"
+      },
       "description": "Create demo-grade SPEC.md files for UiPath demos across any UiPath artifact surface",
       "version": "1.0.0",
       "author": {
         "name": "James Dickson"
       },
-      "repository": "https://github.com/jms-dcksn/uipath-demo-builder",
+      "repository": "https://github.com/jms-dcksn/demo-skill-hub/tree/main/demo-builder",
       "keywords": ["uipath", "demo", "spec", "presales", "planner"]
     }
   ]
