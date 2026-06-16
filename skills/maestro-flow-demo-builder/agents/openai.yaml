@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maestro Flow Demo Builder"
+  short_description: "Build customer-ready Maestro Flow demos"
+  default_prompt: "Use $maestro-flow-demo-builder to design and build a customer-ready UiPath Maestro Flow demo."
