@@ -1,5 +1,5 @@
 ---
-name: maestro-flow-demo-builder
+name: golden-maestro-flow-demo
 description: "Opinionated guidance for designing, building, improving, or reviewing customer-ready UiPath Maestro Flow demos. Use when Codex is asked for a Flow demo, Maestro Flow demo, Studio Web Flow demo, `.flow` artifact, demo narrative, or demo-grade Flow scaffold that should show end-to-end orchestration, visual appeal, diverse actors, agents, document processing, HITL, connectors, API workflows, RPA, and durable execution."
 ---
 

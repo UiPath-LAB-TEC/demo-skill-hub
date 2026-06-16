@@ -4,6 +4,8 @@
 
 The skill plans the demo only. It does not build, validate, upload, or deploy UiPath artifacts.
 
+Use this skill when you need to plan a large demo build (think Maestro BPMN or Case, a few agents, a few APIWF etc.) - if not at this scale, the planning and SPEC generation are probably overkill.
+
 Repository: https://github.com/jms-dcksn/demo-skill-hub/tree/main/demo-builder
 
 ## Install
