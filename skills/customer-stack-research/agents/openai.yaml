@@ -1,0 +1,4 @@
+interface:
+  display_name: "Customer Stack Research"
+  short_description: "Research customer technology stacks"
+  default_prompt: "Use $customer-stack-research to research a customer's public technology stack from defensible evidence."

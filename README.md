@@ -11,6 +11,7 @@ The content is focused on practical demo work: planning UiPath demos, converting
   - `skills/uipath-reference-solution-planner/` - Codex skill for planning a new UiPath demo from a downloaded reference solution.
   - `skills/bpmn-flow-conversion/` - local skill for converting Maestro BPMN demos into Maestro Flow demos.
   - `skills/skill-marketplace-metadata/` - Codex skill for adding Marketplace metadata to skill `SKILL.md` files.
+  - `skills/customer-stack-research/` - Codex skill for evidence-based customer technology stack research.
 - `demos/` - one-shot prompts and exercises that demonstrate coding-agent demo patterns.
   - `demos/flow-multi-agent/` - prompt example for a multi-agent Maestro Flow demo.
   - `demos/two-agent-demo/` - prompt example for a two-agent demo pattern.
