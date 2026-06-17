@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Marketplace Metadata"
+  short_description: "Add marketplace metadata to skills"
+  default_prompt: "Use $skill-marketplace-metadata to add or refresh marketplace metadata in a skill SKILL.md while preserving the schema contract."
