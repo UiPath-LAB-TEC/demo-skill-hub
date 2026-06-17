@@ -1,0 +1,4 @@
+interface:
+  display_name: "UiPath Reference Solution Planner"
+  short_description: "Plan a demo from a reference solution"
+  default_prompt: "Use $uipath-reference-solution-planner to inspect an existing UiPath solution and produce SPEC.md plus PLAN.md for a similar demo."
