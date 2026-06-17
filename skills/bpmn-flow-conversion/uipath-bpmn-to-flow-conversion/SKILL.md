@@ -1,6 +1,24 @@
 ---
 name: uipath-bpmn-to-flow-conversion
 description: "Use when converting existing UiPath Maestro BPMN / Process Orchestration demos into UiPath Maestro Flow demos, especially for Sales Engineer demo migration where the goal is a close 1:1 conversion that reuses existing RPA, API workflow, connector, and AI agent resources. Requires explicit user choices for agent representation and HITL/action-app conversion before planning or building those parts."
+metadata:
+  author: "James Dickson"
+  version: "1.0.0"
+  ownerEmail: "jms.dcksn88@gmail.com"
+  changeSummary: "Added marketplace metadata for the existing BPMN to Flow conversion skill."
+  isBreaking: false
+  category: "Sales Engineering"
+  tags:
+    - uipath
+    - maestro
+    - bpmn
+    - flow
+    - demo-conversion
+  platforms:
+    - OpenAI
+    - UiPath Automations
+  businessUseCases:
+    - "Convert Maestro BPMN demos into Maestro Flow demos"
 ---
 
 # UiPath BPMN To Maestro Flow Conversion

@@ -1,6 +1,24 @@
 ---
 name: uipath-reference-solution-planner
 description: "Plan a new UiPath demo from an existing Studio Web solution reference. Use when the user wants to base a new use case on a known-good UiPath demo, provides or needs to provide a solution ID, asks to download/export and inspect a UiPath solution, or needs detailed SPEC.md and PLAN.md artifacts plus exact builder kickoff instructions. Produces planning artifacts only; do not build, upload, publish, or deploy the target demo."
+metadata:
+  author: "James Dickson"
+  version: "1.0.0"
+  ownerEmail: "jms.dcksn88@gmail.com"
+  changeSummary: "Added marketplace metadata for the existing reference solution planning skill."
+  isBreaking: false
+  category: "Sales Engineering"
+  tags:
+    - uipath
+    - studio-web
+    - solution
+    - planning
+    - demo
+  platforms:
+    - OpenAI
+    - UiPath Automations
+  businessUseCases:
+    - "Plan new UiPath demos from existing Studio Web reference solutions"
 ---
 
 # UiPath Reference Solution Planner

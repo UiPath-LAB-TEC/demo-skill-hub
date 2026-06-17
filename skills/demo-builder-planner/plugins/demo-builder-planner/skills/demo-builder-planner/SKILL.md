@@ -1,6 +1,25 @@
 ---
 name: demo-builder-planner
 description: "Create demo-grade SPEC.md files for UiPath demos across any UiPath artifact surface. Use when the user asks to design, scope, propose, or specify a UiPath demo; provides a customer/account name; provides a use-case brief; or mentions UiPath demo artifacts such as Maestro Flow, BPMN, RPA, agents, coded apps, API workflows, case management, Data Fabric, human review, platform resources, or solution packaging. Produces a SPEC.md only, not implementation artifacts or handoff prompts."
+metadata:
+  author: "James Dickson"
+  version: "1.0.0"
+  ownerEmail: "jms.dcksn88@gmail.com"
+  changeSummary: "Added marketplace metadata for the existing UiPath demo SPEC builder skill."
+  isBreaking: false
+  category: "Sales Engineering"
+  tags:
+    - uipath
+    - demo
+    - spec
+    - presales
+    - planner
+  platforms:
+    - Claude
+    - OpenAI
+    - UiPath Automations
+  businessUseCases:
+    - "Create build-ready SPEC.md files for UiPath demo artifacts"
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, AskUserQuestion, Agent
 ---
 
