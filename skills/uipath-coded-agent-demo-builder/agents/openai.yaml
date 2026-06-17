@@ -1,0 +1,4 @@
+interface:
+  display_name: "UiPath Coded Agent Demo Builder"
+  short_description: "Build best-practice coded agent demos"
+  default_prompt: "Use $uipath-coded-agent-demo-builder to build a demo-grade UiPath coded agent with LangGraph, LangChain create_agent(), guardrails, and Context Grounding."

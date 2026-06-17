@@ -8,6 +8,7 @@ The content is focused on practical demo work: planning UiPath demos, converting
 
 - `skills/` - reusable Codex and Claude skills for demo planning and build guidance.
   - `skills/demo-builder-planner/` - plugin and Codex skill for writing UiPath demo `SPEC.md` files.
+  - `skills/uipath-coded-agent-demo-builder/` - Codex skill for building opinionated UiPath coded agent demos with LangGraph, LangChain, Context Grounding, and guardrails.
   - `skills/uipath-reference-solution-planner/` - Codex skill for planning a new UiPath demo from a downloaded reference solution.
   - `skills/bpmn-flow-conversion/` - local skill for converting Maestro BPMN demos into Maestro Flow demos.
   - `skills/skill-marketplace-metadata/` - Codex skill for adding Marketplace metadata to skill `SKILL.md` files.
