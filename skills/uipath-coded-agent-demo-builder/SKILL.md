@@ -4,7 +4,7 @@ description: "Build demo-grade UiPath coded agent demos using a prescribed LangG
 metadata:
   author: "James Dickson"
   version: "1.0.0"
-  ownerEmail: "jms.dcksn88@gmail.com"
+  ownerEmail: "james.dickson@uipath.com"
   changeSummary: "Initial opinionated coded agent demo builder skill."
   isBreaking: false
   category: "Sales Engineering"

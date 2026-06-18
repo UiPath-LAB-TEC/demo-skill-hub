@@ -4,7 +4,7 @@ description: "Add or refresh Enterprise AI & Automation Marketplace metadata in 
 metadata:
   author: "James Dickson"
   version: "1.0.0"
-  ownerEmail: "jms.dcksn88@gmail.com"
+  ownerEmail: "james.dickson@uipath.com"
   changeSummary: "Initial marketplace metadata authoring guidance."
   isBreaking: false
   category: "Sales Engineering"

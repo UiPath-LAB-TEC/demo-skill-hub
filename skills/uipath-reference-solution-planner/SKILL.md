@@ -4,7 +4,7 @@ description: "Plan a new UiPath demo from an existing Studio Web solution refere
 metadata:
   author: "James Dickson"
   version: "1.0.0"
-  ownerEmail: "jms.dcksn88@gmail.com"
+  ownerEmail: "james.dickson@uipath.com"
   changeSummary: "Added marketplace metadata for the existing reference solution planning skill."
   isBreaking: false
   category: "Sales Engineering"

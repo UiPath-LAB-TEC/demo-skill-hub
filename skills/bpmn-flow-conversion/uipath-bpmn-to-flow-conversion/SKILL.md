@@ -4,7 +4,7 @@ description: "Use when converting existing UiPath Maestro BPMN / Process Orchest
 metadata:
   author: "James Dickson"
   version: "1.0.0"
-  ownerEmail: "jms.dcksn88@gmail.com"
+  ownerEmail: "james.dickson@uipath.com"
   changeSummary: "Added marketplace metadata for the existing BPMN to Flow conversion skill."
   isBreaking: false
   category: "Sales Engineering"

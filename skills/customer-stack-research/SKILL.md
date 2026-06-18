@@ -4,7 +4,7 @@ description: "Research a customer's enterprise technology stack from public and 
 metadata:
   author: "James Dickson"
   version: "1.0.0"
-  ownerEmail: "jms.dcksn88@gmail.com"
+  ownerEmail: "james.dickson@uipath.com"
   changeSummary: "Initial customer technology stack research workflow."
   isBreaking: false
   category: "Sales Engineering"

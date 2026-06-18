@@ -4,7 +4,7 @@ description: "Create demo-grade SPEC.md files for UiPath demos across any UiPath
 metadata:
   author: "James Dickson"
   version: "1.0.0"
-  ownerEmail: "jms.dcksn88@gmail.com"
+  ownerEmail: "james.dickson@uipath.com"
   changeSummary: "Added marketplace metadata for the existing UiPath demo SPEC builder skill."
   isBreaking: false
   category: "Sales Engineering"
