@@ -1,0 +1,4 @@
+interface:
+  display_name: "UiPath SE Executive Artifacts"
+  short_description: "Create customer-facing UiPath demo slides and artifacts."
+  default_prompt: "Create customer-facing artifacts from this UiPath demo solution."

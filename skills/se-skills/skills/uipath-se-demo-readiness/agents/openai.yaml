@@ -1,0 +1,4 @@
+interface:
+  display_name: "UiPath SE Demo Readiness"
+  short_description: "Validate and rehearse UiPath demos before customer delivery."
+  default_prompt: "Assess this UiPath demo for customer-readiness and rehearsal gaps."

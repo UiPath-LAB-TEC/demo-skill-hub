@@ -1,0 +1,4 @@
+interface:
+  display_name: "UiPath SE Account Research"
+  short_description: "Research accounts and process context for UiPath demos."
+  default_prompt: "Research this organization and process area for UiPath demo planning."

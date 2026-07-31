@@ -1,0 +1,4 @@
+interface:
+  display_name: "UiPath SE Discovery"
+  short_description: "Turn customer conversations into structured SE discovery."
+  default_prompt: "Analyze this customer conversation and produce a UiPath SE discovery brief."

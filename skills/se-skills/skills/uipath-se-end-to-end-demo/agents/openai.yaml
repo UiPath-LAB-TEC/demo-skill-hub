@@ -1,0 +1,4 @@
+interface:
+  display_name: "UiPath SE End-To-End Demo"
+  short_description: "Build artifact-first runnable UiPath SE demo workspaces."
+  default_prompt: "Build an artifact-first runnable UiPath end-to-end demo from this discovery context."
