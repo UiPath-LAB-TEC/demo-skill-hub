@@ -1,0 +1,4 @@
+interface:
+  display_name: "Enterprise Workbench UI"
+  short_description: "Production-ready enterprise workbench UIs"
+  default_prompt: "Use $enterprise-workbench-ui to design, build, or review a production-quality enterprise workbench with an operational queue, case workspace, evidence review, accessible states, and a complete disposition flow."
