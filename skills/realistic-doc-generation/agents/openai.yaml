@@ -1,0 +1,4 @@
+interface:
+  display_name: "Realistic Doc Generation"
+  short_description: "Realistic synthetic docs with varied source styles"
+  default_prompt: "Use $realistic-doc-generation to create realistic synthetic documents with varied layouts, filled-in data, and QA."
