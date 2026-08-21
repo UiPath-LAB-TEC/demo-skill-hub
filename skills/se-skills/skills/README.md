@@ -10,6 +10,7 @@ Reusable Codex skills for Sales Engineers turning customer discovery into credib
 - `uipath-se-end-to-end-demo`: Build artifact-first, runnable UiPath presales demos and solution showcases.
 - `uipath-se-demo-readiness`: Validate, rehearse, reset, and package demos before customer delivery.
 - `uipath-se-executive-artifacts`: Create slides, one-pagers, demo scripts, capability maps, and executive summaries.
+- `uipath-se-scale-maestro-demo`: Scale and operate an already deployed Maestro BPMN process, including controlled batch starts and instance lifecycle actions.
 - `build-uipath-end-to-end-demo`: Legacy shared build skill retained for existing prompts.
 
 ## Example Prompt

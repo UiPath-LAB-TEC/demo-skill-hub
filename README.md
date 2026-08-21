@@ -21,6 +21,7 @@ The content is focused on practical demo work: planning UiPath demos, converting
     - `uipath-se-end-to-end-demo` - builds artifact-first, runnable UiPath presales demos and solution showcases.
     - `uipath-se-demo-readiness` - validates, rehearses, resets, and packages demos for customer delivery.
     - `uipath-se-executive-artifacts` - creates slides, one-pagers, demo scripts, capability maps, and executive summaries.
+    - `uipath-se-scale-maestro-demo` - scales and operates an already deployed Maestro BPMN process with auditable batch starts and instance lifecycle actions.
 - `demos/` - one-shot prompts and exercises that demonstrate coding-agent demo patterns.
   - `demos/flow-multi-agent/` - prompt example for a multi-agent Maestro Flow demo.
   - `demos/two-agent-demo/` - prompt example for a two-agent demo pattern.
