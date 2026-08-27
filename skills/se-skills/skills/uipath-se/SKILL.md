@@ -18,8 +18,11 @@ Route requests as follows:
 - Build, implement, scaffold, create runnable demo, create prototype, package, deploy, validate, create solution, generate solution, create automation, create agent, or end-to-end demo: use `uipath-se-end-to-end-demo`.
 - Demo validation, rehearsal, troubleshooting, readiness review: use `uipath-se-demo-readiness`.
 - Slides, executive one-pagers, executive summary, talk tracks, talk track only, value summaries, demo scripts: use `uipath-se-executive-artifacts`.
+- Start an already deployed Maestro BPMN process at a parameterized scale, create controlled demo or test instances, or list, open, retry, migrate, or `goto` selected Maestro instances: use `uipath-se-scale-maestro-demo`.
 
 For any build-oriented request, `uipath-se-end-to-end-demo` is the canonical owning skill.
+
+For requests that operate an existing deployed Maestro BPMN process rather than design or rebuild one, `uipath-se-scale-maestro-demo` is the canonical owning skill.
 
 ## Operating Rules
 

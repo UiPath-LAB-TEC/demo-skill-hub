@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scale Maestro SE Demo"
+  short_description: "Scale and manage deployed Maestro BPMN processes."
+  default_prompt: "Use $uipath-se-scale-maestro-demo to start this deployed Maestro BPMN process at a controlled scale and manage selected instances safely."
